@@ -1,17 +1,16 @@
-````md
 # 📚 RAG Book Assistant
 
 A simple **Retrieval-Augmented Generation (RAG)** application that allows users to upload a PDF and ask questions based on its content.
 
 ## Tech Stack
 
-- Python
-- Streamlit
-- LangChain
-- ChromaDB
-- Hugging Face / OpenAI Embeddings
-- Mistral AI
-- PyPDF
+* Python
+* Streamlit
+* LangChain
+* ChromaDB
+* Hugging Face / OpenAI Embeddings
+* Mistral AI
+* PyPDF
 
 ## Project Structure
 
@@ -24,7 +23,7 @@ rag-book-assistant/
 ├── .env
 ├── .gitignore
 └── chroma_db/
-````
+```
 
 ## RAG Flow
 
@@ -68,7 +67,7 @@ Hugging Face      OpenAI
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/thvvamshi/rag-book-assistant
+git clone https://github.com/thvvamshi/rag-book-assistant.git
 cd rag-book-assistant
 ```
 
@@ -84,7 +83,7 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 
 Restart the terminal after installation.
 
-**Verify:**
+Verify:
 
 ```bash
 uv --version
