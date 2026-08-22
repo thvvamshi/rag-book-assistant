@@ -103,7 +103,7 @@ if os.path.exists("chroma_db"):
         placeholder="What is deep learning?"
     )
 
-    if query:
+    if query.strip():
 
         with st.spinner(
             "Searching the document..."

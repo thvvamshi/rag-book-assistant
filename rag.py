@@ -81,18 +81,32 @@ prompt = ChatPromptTemplate.from_messages(
 # Ask Question
 def ask_question(query):
 
+    query = query.strip()
+
+    if not query:
+        return "Please enter a question."
+
     vectorstore = get_vectorstore()
 
     retriever = vectorstore.as_retriever(
         search_type="mmr",
         search_kwargs={
-            "k": 4,
-            "fetch_k": 10,
+            "k": 6,
+            "fetch_k": 20,
             "lambda_mult": 0.5
         }
     )
 
     documents = retriever.invoke(query)
+
+    print("\n===== QUERY =====")
+    print(query)
+
+    print("\n===== RETRIEVED DOCUMENTS =====")
+
+    for i, document in enumerate(documents):
+        print(f"\n--- Document {i + 1} ---")
+        print(document.page_content[:2000])
 
     if not documents:
         return "I could not find the answer in the document."
@@ -102,12 +116,10 @@ def ask_question(query):
         for document in documents
     )
 
-    final_prompt = prompt.invoke(
-        {
-            "context": context,
-            "question": query
-        }
-    )
+    final_prompt = prompt.invoke({
+        "context": context,
+        "question": query
+    })
 
     response = llm.invoke(final_prompt)
 
