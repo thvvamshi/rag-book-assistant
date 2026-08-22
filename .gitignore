@@ -13,8 +13,6 @@ __pycache__/
 # ChromaDB
 chroma_db/
 
-# Streamlit
-.streamlit/
 
 # OS files
 .DS_Store
