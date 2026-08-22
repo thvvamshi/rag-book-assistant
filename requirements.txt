@@ -1,5 +1,4 @@
 streamlit
-
 langchain
 langchain-core
 langchain-community
@@ -13,7 +12,9 @@ openai
 mistralai
 
 chromadb
-sentence-transformers
 pypdf
+
+sentence-transformers
+torch
 
 python-dotenv
